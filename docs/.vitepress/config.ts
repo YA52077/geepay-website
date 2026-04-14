@@ -5,7 +5,7 @@ import {
 } from 'vitepress'
 
 const prod = !!process.env.NETLIFY
-const siteUrl = 'https://vitepress.dev'
+const siteUrl = 'https://sc58.cn'
 
 const ogImage = new URL('/img/sc58.png', siteUrl).href
 
