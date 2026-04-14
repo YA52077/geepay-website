@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/fonts/blockdole.woff2') format('woff2');
+  font-weight:bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root:where(:lang(fa)) {
+  --vp-font-family-base:
+    'Vazirmatn', 'CustomFont', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+  --vp-font-family-base: 'CustomFont', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --vp-font-family-heading: 'CustomFont', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: 'CustomFont', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #4CAF50 30%,
+    #8BC34A
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #4CAF50 30%,
+    #FFC107 70%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+  --vp-button-brand-bg: #FFC107;
+  --vp-button-brand-hover-bg: #FFB300;
+  --vp-button-brand-active-bg: #FFA000;
+  --vp-button-brand-text: #000000;
+  --vp-button-brand-hover-text: #000000;
+  --vp-button-brand-active-text: #000000;
+}
+
+/* 针对中文的字体设置 */
+[lang]:where(:lang(zh, ja)) {
+  --vp-font-family-base: 'CustomFont', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --vp-font-family-heading: 'CustomFont', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 全局字体覆盖 */
+* {
+  font-family: 'CustomFont', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+.tip a{
+  text-decoration: none; 
+}
+
+.VPNavBarMenuLink.active {
+  color: #FFC107 !important;
+}
+
+.VPNavBarMenuLink.active:hover {
+  color: #FFC107 !important;
+}
+
+.VPHero .VPImage {
+  filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.2));
+  padding: 18px;
+}
+
+/* used in reference/default-theme-search */
+img[src='/search.png'] {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.vpi-social-gitee {
+  color: #c71d23 !important;
+}
+
+.title span{
+  font-family: ui-sans-serif !important;
+}
+
+.title:hover {
+  color: #3c3c43 !important
+}
+
+/* 超链接样式 */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  /* color: #FFC107 !important; */
+}
+
+/* 暗黑模式下的超链接样式 */
+.dark a:hover,
+.dark a:focus {
+  color: #FFC107 !important;
+}
