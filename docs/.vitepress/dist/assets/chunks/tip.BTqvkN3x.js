@@ -1,1 +1,0 @@
-var e=`/img/tip.png`;export{e as t};

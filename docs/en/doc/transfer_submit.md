@@ -1,0 +1,34 @@
+---
+description: GeePay API documentation.
+---
+<h1>Submit Transfer</h1>
+
+<div class="tip custom-block" style="padding-top: 8px">Enable the transfer feature and the transfer API switch before using this API.</div>
+
+## Endpoint
+<div class="tip custom-block" style="padding-top: 8px">https://pay.sc58.cn/api/transfer/submit</div>
+
+## Request Method
+<div class="tip custom-block" style="padding-top: 8px">POST</div>
+
+## Request Parameters
+<table>
+<tr><th>Field</th><th>Parameter</th><th>Required</th><th>Type</th><th>Example</th><th>Description</th></tr>
+<tr><td>Merchant ID</td><td>pid</td><td>Yes</td><td>Int</td><td>1000</td><td>Your merchant ID</td></tr>
+<tr><td>Timestamp</td><td>timestamp</td><td>Yes</td><td>String</td><td>1721206072</td><td>10-digit Unix timestamp in seconds</td></tr>
+<tr><td>Signature</td><td>sign</td><td>Yes</td><td>String</td><td></td><td>See Signature Rules</td></tr>
+<tr><td>Signature Type</td><td>sign_type</td><td>Yes</td><td>String</td><td>RSA</td><td>Defaults to RSA</td></tr>
+</table>
+
+## Response Parameters
+<table>
+<tr><th>Field</th><th>Parameter</th><th>Type</th><th>Example</th><th>Description</th></tr>
+<tr><td>Response Code</td><td>code</td><td>Int</td><td>0</td><td>0 means success, other values mean failure</td></tr>
+<tr><td>Message</td><td>msg</td><td>String</td><td></td><td>Returned on success or failure</td></tr>
+<tr><td>Timestamp</td><td>timestamp</td><td>String</td><td>1721206072</td><td>10-digit Unix timestamp in seconds</td></tr>
+<tr><td>Signature</td><td>sign</td><td>String</td><td></td><td>Response signature</td></tr>
+<tr><td>Signature Type</td><td>sign_type</td><td>String</td><td>RSA</td><td>Defaults to RSA</td></tr>
+</table>
+
+## Transfer Method List
+<table><tr><th>Value</th><th>Description</th></tr><tr><td>alipay</td><td>Alipay transfer</td></tr><tr><td>wxpay</td><td>WeChat transfer</td></tr><tr><td>bank</td><td>Bank card transfer</td></tr></table>

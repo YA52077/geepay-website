@@ -1,39 +1,208 @@
-# VitePress 📝💨
+# GeePay Official Website
 
-[![test](https://github.com/vuejs/vitepress/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/vuejs/vitepress/actions/workflows/test.yml)
-[![npm](https://img.shields.io/npm/v/vitepress/next)](https://www.npmjs.com/package/vitepress/v/next)
-[![nightly releases](https://img.shields.io/badge/nightly-releases-orange)](https://nightly.akryum.dev/vuejs/vitepress)
-[![chat](https://img.shields.io/badge/chat-discord-blue?logo=discord)](https://chat.vuejs.org)
+GeePay 官方网站与 API 文档项目,专注于展示 GeePay 产品介绍、接口文档、赞助信息和中英文双语文档。
 
----
+## 项目简介
 
-VitePress is a Vue-powered static site generator and a spiritual successor to [VuePress](https://vuepress.vuejs.org), built on top of [Vite](https://github.com/vitejs/vite).
+GeePay 是一个免签约支付产品，面向开发者和商户提供支付宝、微信支付、QQ 钱包等支付方式的快速接入能力。
 
-## Documentation
+本仓库用于维护 GeePay 官方文档站点，包含：
 
-To check out docs, visit [vitepress.dev](https://vitepress.dev).
+- 产品首页
+- API 接口文档
+- 支付、退款、商户、代付相关接口说明
+- SDK 下载说明
+- 赞助与联系方式
+- 中文 / English 双语页面
 
-## Changelog
+## 项目预览
 
-Detailed changes for each release are documented in the [CHANGELOG](https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md).
+### 中文站点
 
-## Contribution
+<img src="docs/public/img/zh-sc58.png" alt="GeePay 中文站点预览" width="800">
 
-Please make sure to read the [Contributing Guide](https://github.com/vuejs/vitepress/blob/main/.github/contributing.md) before making a pull request.
+### English Site
+
+<img src="docs/public/img/en-sc58.png" alt="GeePay English Site Preview" width="800">
+
+## 目录结构
+
+```text
+.
+├── docs/
+│   ├── .vitepress/
+│   │   ├── config.ts          # VitePress 配置与多语言配置
+│   │   └── theme/             # 自定义主题样式与组件
+│   ├── public/                # 静态资源，图片与字体
+│   ├── zh/                    # 中文文档
+│   │   ├── index.md
+│   │   ├── doc/
+│   │   └── sponsorship/
+│   ├── en/                    # English documentation
+│   │   ├── index.md
+│   │   ├── doc/
+│   │   └── sponsorship/
+│   ├── index.md               # 根路径跳转到 /zh/
+│   └── package.json
+├── netlify.toml               # Netlify 构建配置
+└── README.md
+```
+
+## 多语言路由
+
+当前站点支持两种语言：
+
+| 语言     | 路径   |
+| -------- | ------ |
+| 简体中文 | `/zh/` |
+| English  | `/en/` |
+
+根路径 `/` 会自动跳转到 `/zh/`。
+
+常用页面：
+
+- 中文首页：`/zh/`
+- 英文首页：`/en/`
+- 中文接口文档：`/zh/doc/index`
+- 英文接口文档：`/en/doc/index`
+
+## 本地开发
+
+进入 docs 目录安装依赖：
+
+```bash
+cd docs
+pnpm install
+```
+
+如果使用 npm：
+
+```bash
+cd docs
+npm install
+```
+
+启动开发服务器：
+
+```bash
+pnpm run dev
+```
+
+或：
+
+```bash
+npm run dev
+```
+
+默认访问地址：
+
+```text
+http://127.0.0.1:5173/
+```
+
+## 构建项目
+
+```bash
+cd docs
+pnpm run build
+```
+
+或：
+
+```bash
+cd docs
+npm run build
+```
+
+构建产物位于：
+
+```text
+docs/.vitepress/dist
+```
+
+## 预览构建结果
+
+```bash
+cd docs
+pnpm run preview
+```
+
+或：
+
+```bash
+cd docs
+npm run preview
+```
+
+## 部署说明
+
+项目已包含 Netlify 配置：[netlify.toml](netlify.toml)。
+
+Netlify 构建命令：
+
+```bash
+npm --prefix docs install && npm --prefix docs run build
+```
+
+发布目录：
+
+```text
+docs/.vitepress/dist
+```
+
+## 文档维护说明
+
+### 中文文档
+
+中文内容位于：
+
+```text
+docs/zh/
+```
+
+### 英文文档
+
+英文内容位于：
+
+```text
+docs/en/
+```
+
+### 静态资源
+
+图片、二维码、字体等资源位于：
+
+```text
+docs/public/
+```
+
+在 Markdown 中可以使用绝对路径引用，例如：
+
+```md
+![GeePay Logo](/img/sc58.png)
+```
+
+## 主要功能
+
+- 响应式 VitePress 文档站
+- 中英文双语切换
+- 本地搜索
+- 自定义首页样式
+- 自定义导航、侧边栏和主题色
+- API 文档结构化展示
+- Netlify 自动部署支持
+
+## 相关链接
+
+- 官方网站：https://sc58.cn
+- GitHub 仓库：https://github.com/YA52077/geepay-website
+- 支付体验：https://pay.sc58.cn/user/test.php
+
+## 联系方式
+
+- QQ：7504544
+- WX：JIelst
 
 ## License
 
-[MIT](https://github.com/vuejs/vitepress/blob/main/LICENSE)
-
-Copyright (c) 2019-present, Yuxi (Evan) You
-
-## Special Thanks
-
-This project would not be possible without the support of these amazing companies and tools.
-
-|                                                                                                                                             |                                              |                                                                                                                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <a href="https://voidzero.dev" target="_blank"><img alt="VoidZero's logo" src="https://github.com/voidzero-dev.png" width="80" /></a>         | **[VoidZero](https://voidzero.dev)**         | The company behind Vite, Vitest, Rolldown, and Oxc. VoidZero has been a long-time sponsor of VitePress. VitePress itself is built on top of this ecosystem of high-performance JavaScript tooling.     |
-| <a href="https://stackblitz.com" target="_blank"><img alt="StackBlitz's logo" src="https://github.com/stackblitz.png" width="80" /></a>       | **[StackBlitz](https://stackblitz.com)**     | Creators of WebContainers and a browser-based development platform. Their technology powers the VitePress playground and provides instant preview releases for our pull requests and commits.          |
-| <a href="https://algolia.com" target="_blank"><img alt="Algolia's logo" src="https://github.com/algolia.png" width="80" /></a>                | **[Algolia](https://algolia.com)**           | An AI-powered search platform that provides fast, scalable search. Algolia powers DocSearch for VitePress. Their team has been a long-time partner in building and maintaining our search integration. |
-| <a href="https://browserstack.com" target="_blank"><img alt="BrowserStack's logo" src="https://github.com/browserstack.png" width="80" /></a> | **[BrowserStack](https://browserstack.com)** | A cloud-based testing platform for websites and mobile apps. BrowserStack provides the cross-browser and real-device infrastructure used to ensure VitePress works consistently across all browsers.   |
+本项目仅用于 GeePay 官方网站与文档展示。具体授权请以项目所有者说明为准。

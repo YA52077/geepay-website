@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'CustomFont';
-  src: url('/fonts/blockdole.woff2') format('woff2');
+  src: url('/fonts/sc58-DdtKdonJ.woff2') format('woff2');
   font-weight:bold;
   font-style: normal;
   font-display: swap;
@@ -73,9 +73,31 @@
   color: #FFC107 !important;
 }
 
+.VPSidebarItem .item .link:hover,
+.VPSidebarItem .text:hover {
+  color: #FFC107 !important;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink:focus,
+.VPNavBarMenuGroup .button:hover,
+.VPNavBarMenuGroup .button:focus {
+  color: #FFC107 !important;
+}
+
+.VPFeature.link {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+.VPFeature .link-text-value,
+.VPFeature .link-text-icon {
+  color: #FFC107 !important;
+}
+
 .VPHero .VPImage {
   filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.2));
-  padding: 18px;
+  /* padding: 18px; */
 }
 
 /* used in reference/default-theme-search */
@@ -99,11 +121,6 @@ img[src='/search.png'] {
 /* 超链接样式 */
 a {
   transition: color 0.3s ease;
-}
-
-a:hover,
-a:focus {
-  /* color: #FFC107 !important; */
 }
 
 /* 暗黑模式下的超链接样式 */
