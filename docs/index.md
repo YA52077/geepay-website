@@ -1,19 +1,9 @@
 ---
-layout: page
-head:
-  - - meta
-    - http-equiv: refresh
-      content: 0; url=/zh/
+layout: false
 ---
 
 <script setup>
-import { inBrowser } from 'vitepress'
-
-if (inBrowser) {
-  window.location.replace('/zh/')
-}
+import LoadingScreen from './.vitepress/theme/LoadingScreen.vue'
 </script>
 
-正在跳转到[简体中文](/zh/)…
-
-Redirecting to [Simplified Chinese](/zh/)…
+<LoadingScreen />

@@ -53,7 +53,7 @@ features:
     <div class="qr-code">
       <img src="/img/qq.png" alt="QQ" style="width: 180px; height: 180px;">
     </div>
-    <p>如果扫码失败请直接搜 QQ 号：7504544</p>
+    <p>扫码失败手动添加QQ 号：7504544</p>
   </div>
   <div class="contact-item">
     <div class="contact-header">
@@ -63,7 +63,17 @@ features:
     <div class="qr-code">
       <img src="/img/qun.png" alt="QQ交流群" style="width: 180px; height: 180px;">
     </div>
-    <p>如果扫码失败请直接搜QQ群：746280829</p>
+    <p>扫码失败手动添加QQ 群：746280829</p>
+  </div>
+  <div class="contact-item">
+    <div class="contact-header">
+      <span class="contact-label">小程序</span>
+      <span class="contact-title-text">扫码体验</span>
+    </div>
+    <div class="qr-code">
+      <img src="/img/xch.jpg" alt="小程序" style="width: 180px; height: 180px;">
+    </div>
+    <p>微信扫一扫，使用小程序</p>
   </div>
   <div class="contact-item">
     <div class="contact-header">
@@ -73,9 +83,9 @@ features:
     <div class="qr-code">
       <img src="/img/wechat.png" alt="微信" style="width: 180px; height: 180px;">
     </div>
-    <p>如果扫码失败请直接搜微信号：JIelst</p>
+    <p>扫码失败手动添加微信号：JIelst</p>
   </div>
-  <div class="contact-item">
+  <!-- <div class="contact-item">
     <div class="contact-header">
       <span class="contact-label">打赏</span>
       <span class="contact-title-text">赞助我们</span>
@@ -83,8 +93,8 @@ features:
     <div class="qr-code">
       <img src="/img/tip.png" alt="打赏" style="width: 180px; height: 180px;">
     </div>
-    <p>如果绝得不错欢迎赞助我们，支持各种方式的赞助</p>
-  </div>
+    <p>支持各种方式的赞助</p>
+  </div> -->
 </div>
 
 <style>

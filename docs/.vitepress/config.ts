@@ -206,7 +206,7 @@ export default defineConfig({
           message:
             '<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">鄂ICP备2021021587号</a>',
           copyright:
-            'GeePay © 2026 All Rights Reserved.<a href="https://codex.48nh.com/" target="_blank" style="text-decoration: none; font-family: sans-serif !important;">ClaudeAPI</a>'
+            'GeePay © 2026 All Rights Reserved.<a href="https://codex.48nh.com/" target="_blank" style="text-decoration: none;">ClaudeAPI</a>'
         },
         docFooter: {
           prev: 'Previous page',
