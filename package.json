@@ -1,0 +1,10 @@
+{
+  "name": "geepay-website",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix docs run dev",
+    "build": "npm --prefix docs run build",
+    "preview": "npm --prefix docs run preview",
+    "deploy": "npx wrangler pages deploy docs/.vitepress/dist"
+  }
+}
