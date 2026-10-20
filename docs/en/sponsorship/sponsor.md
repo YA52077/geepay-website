@@ -4,7 +4,7 @@ description: Support GeePay through sponsorship or community contributions.
 
 # Sponsorship and Support
 
-GeePay (SC58.cn) depends on user support for continuous development. If this system helps you, you are welcome to support us and make GeePay better.
+GeePay (LXRR.CN) depends on user support for continuous development. If this system helps you, you are welcome to support us and make GeePay better.
 
 ## Become a Sponsor
 

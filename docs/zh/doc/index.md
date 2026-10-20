@@ -40,6 +40,6 @@ description: GeePay,支付宝免签约即时到账,财付通免签约,微信免�
 ## 旧版接口文档
 <div class="tip custom-block" style="padding-top: 8px">
 
-[查看V1旧版接口文档](https://pay.sc58.cn/doc_old.html)
+[查看V1旧版接口文档]($PAY_URL/doc_old.html)
 
 </div>

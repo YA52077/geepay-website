@@ -6,7 +6,7 @@ description: GeePay API documentation.
 <div class="tip custom-block" style="padding-top: 8px">Enable the order refund API switch in the merchant dashboard before calling this API.</div>
 
 ## Endpoint
-<div class="tip custom-block" style="padding-top: 8px">https://pay.sc58.cn/api/pay/refund</div>
+<div class="tip custom-block" style="padding-top: 8px">$PAY_URL/api/pay/refund</div>
 
 ## Request Method
 <div class="tip custom-block" style="padding-top: 8px">POST</div>

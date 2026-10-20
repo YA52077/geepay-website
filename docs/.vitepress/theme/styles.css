@@ -128,3 +128,194 @@ a {
 .dark a:focus {
   color: #FFC107 !important;
 }
+
+/* ============================================================
+   Enhanced Modern Footer Styling (现代化精致页脚设计)
+   ============================================================ */
+
+.VPFooter {
+  position: relative !important;
+  padding: 36px 24px 32px !important;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.6) 0%, rgba(241, 245, 249, 0.95) 100%) !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.8) !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark .VPFooter {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.5) 0%, rgba(10, 15, 29, 0.95) 100%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.VPFooter .container {
+  max-width: 1152px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 16px !important;
+  text-align: center !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  margin: 0 !important;
+  line-height: normal !important;
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+/* 推荐服务徽标行 */
+.footer-links-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-links-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.02em;
+  margin-right: 2px;
+}
+
+.dark .footer-links-label {
+  color: #94a3b8;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155 !important;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 999px;
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .footer-badge {
+  color: #e2e8f0 !important;
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer-badge:hover {
+  color: #0f172a !important;
+  background: #ffffff;
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.dark .footer-badge:hover {
+  color: #fef3c7 !important;
+  background: rgba(45, 55, 72, 0.95);
+  border-color: #fbbf24;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.2);
+}
+
+.badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  transition: transform 0.2s ease;
+}
+
+.footer-badge:hover .badge-icon {
+  transform: scale(1.15);
+}
+
+/* 版权与备案信息行 */
+.footer-meta-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.dark .footer-meta-group {
+  color: #94a3b8;
+}
+
+.footer-brand-link {
+  color: #0f172a !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.dark .footer-brand-link {
+  color: #f8fafc !important;
+}
+
+.footer-brand-link:hover {
+  color: #f59e0b !important;
+}
+
+.footer-dot-sep {
+  color: #cbd5e1;
+  font-weight: bold;
+}
+
+.dark .footer-dot-sep {
+  color: #475569;
+}
+
+.footer-icp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b !important;
+  text-decoration: none !important;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  transition: all 0.2s ease;
+}
+
+.dark .footer-icp-link {
+  color: #94a3b8 !important;
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-icp-link:hover {
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.icp-shield-icon {
+  color: #10b981;
+}
+
+@media (max-width: 640px) {
+  .VPFooter {
+    padding: 28px 16px 24px !important;
+  }
+  .footer-links-group {
+    gap: 8px;
+  }
+  .footer-meta-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-dot-sep {
+    display: none;
+  }
+}
+

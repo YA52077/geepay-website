@@ -4,7 +4,7 @@ description: GeePay API documentation.
 <h1>Query Transfer</h1>
 
 ## Endpoint
-<div class="tip custom-block" style="padding-top: 8px">https://pay.sc58.cn/api/transfer/query</div>
+<div class="tip custom-block" style="padding-top: 8px">$PAY_URL/api/transfer/query</div>
 
 ## Request Method
 <div class="tip custom-block" style="padding-top: 8px">POST</div>

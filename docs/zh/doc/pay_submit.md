@@ -12,7 +12,7 @@ description: GeePay,支付宝免签约即时到账,财付通免签约,微信免�
 ##  请求地址
 <div class="tip custom-block" style="padding-top: 8px">
 
-https://pay.sc58.cn/api/pay/submit
+$PAY_URL/api/pay/submit
 
 </div>
 
@@ -67,7 +67,7 @@ POST 或 GET（推荐POST，不容易被劫持）
     <td>notify_url</td>
     <td>是</td>
     <td>String</td>
-    <td>https://pay.sc58.cn/notify_url.php</td>
+    <td>$PAY_URL/notify_url.php</td>
     <td>服务器异步通知地址</td>
   </tr>
 
@@ -76,7 +76,7 @@ POST 或 GET（推荐POST，不容易被劫持）
     <td>return_url</td>
     <td>是</td>
     <td>String</td>
-    <td>https://pay.sc58.cn/return_url.php</td>
+    <td>$PAY_URL/return_url.php</td>
     <td>页面跳转通知地址</td>
   </tr>
 

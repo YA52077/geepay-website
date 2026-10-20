@@ -6,7 +6,7 @@ description: GeePay API documentation.
 <div class="tip custom-block" style="padding-top: 8px">Enable the transfer feature and the transfer API switch before using this API.</div>
 
 ## Endpoint
-<div class="tip custom-block" style="padding-top: 8px">https://pay.sc58.cn/api/transfer/submit</div>
+<div class="tip custom-block" style="padding-top: 8px">$PAY_URL/api/transfer/submit</div>
 
 ## Request Method
 <div class="tip custom-block" style="padding-top: 8px">POST</div>

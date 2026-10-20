@@ -4,9 +4,11 @@ import {
   type DefaultTheme,
   type HeadConfig
 } from 'vitepress'
+import { payUrl } from './site.config'
 
-const prod = !!process.env.NETLIFY
-const siteUrl = 'https://sc58.cn'
+export { payUrl }
+
+const siteUrl = payUrl
 
 const ogImage = new URL('/img/sc58.png', siteUrl).href
 
@@ -45,6 +47,16 @@ export default defineConfig({
       }
     ],
     config(md) {
+      const defaultRender = md.render.bind(md)
+      md.render = (src, env) => {
+        const cleanUrl = payUrl.replace(/\/+$/, '')
+        const replaced = src.replace(
+          /\$PAY_URL|\{\{\s*(?:PAY_URL|payUrl)\s*\}\}/g,
+          cleanUrl
+        )
+        return defaultRender(replaced, env)
+      }
+
       const fence = md.renderer.rules.fence!
       md.renderer.rules.fence = function (tokens, idx, options, env, self) {
         const codeCopyButtonTitle = '复制代码'
@@ -67,6 +79,24 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/png', href: '/img/sc58.png' }],
     ['meta', { name: 'theme-color', content: '#eed85fff' }]
   ],
+
+  vite: {
+    plugins: [
+      {
+        name: 'vite-plugin-pay-url-variable',
+        enforce: 'pre',
+        transform(code, id) {
+          if (id.endsWith('.md') || id.includes('.md?')) {
+            const cleanUrl = payUrl.replace(/\/+$/, '')
+            return code.replace(
+              /\$PAY_URL|\{\{\s*(?:PAY_URL|payUrl)\s*\}\}/g,
+              cleanUrl
+            )
+          }
+        }
+      }
+    ]
+  },
 
   themeConfig: {
     logo: { src: '/img/sc58.png', width: 24, height: 24 },
@@ -125,9 +155,9 @@ export default defineConfig({
         },
         footer: {
           message:
-            '<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">鄂ICP备2021021587号</a>',
+            '<span class="footer-links-group"><span class="footer-links-label">推荐服务</span><a class="footer-badge" href="https://ip.lxrr.cn/" target="_blank" rel="noopener"><svg class="badge-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>IP检测</span></a><a class="footer-badge" href="https://codex.lxrr.cn/" target="_blank" rel="noopener"><svg class="badge-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>ClaudeAPI</span></a><a class="footer-badge" href="https://github.com/YA52077/" target="_blank" rel="noopener"><svg class="badge-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg><span>GitHub</span></a></span>',
           copyright:
-            'GeePay  © 2026 All Rights Reserved.<a href="https://codex.48nh.com/" target="_blank" style="text-decoration: none; font-family: sans-serif !important;">ClaudeAPI</a>'
+            '<span class="footer-meta-group"><span class="footer-copyright-item">© 2026 <a href="/zh/" class="footer-brand-link">GeePay</a> · All Rights Reserved</span><span class="footer-dot-sep">·</span><a class="footer-icp-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"><svg class="icp-shield-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>鄂ICP备2021021587号</span></a></span>'
         },
         docFooter: {
           prev: '上一页',
@@ -204,9 +234,9 @@ export default defineConfig({
         },
         footer: {
           message:
-            '<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">鄂ICP备2021021587号</a>',
+            '<span class="footer-links-group"><span class="footer-links-label">Services</span><a class="footer-badge" href="https://ip.lxrr.cn/" target="_blank" rel="noopener"><svg class="badge-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>IP Lookup</span></a><a class="footer-badge" href="https://codex.lxrr.cn/" target="_blank" rel="noopener"><svg class="badge-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>ClaudeAPI</span></a><a class="footer-badge" href="https://github.com/YA52077/" target="_blank" rel="noopener"><svg class="badge-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg><span>GitHub</span></a></span>',
           copyright:
-            'GeePay © 2026 All Rights Reserved.<a href="https://codex.48nh.com/" target="_blank" style="text-decoration: none;">ClaudeAPI</a>'
+            '<span class="footer-meta-group"><span class="footer-copyright-item">© 2026 <a href="/en/" class="footer-brand-link">GeePay</a> · All Rights Reserved</span><span class="footer-dot-sep">·</span><a class="footer-icp-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"><svg class="icp-shield-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>鄂ICP备2021021587号</span></a></span>'
         },
         docFooter: {
           prev: 'Previous page',
@@ -260,6 +290,18 @@ export default defineConfig({
       ['meta', { property: 'og:image:alt', content: 'GeePay' }],
       ['link', { rel: 'canonical', href: url }]
     )
+
+    if (pageData.frontmatter?.hero?.actions) {
+      const cleanUrl = payUrl.replace(/\/+$/, '')
+      pageData.frontmatter.hero.actions.forEach((action: any) => {
+        if (typeof action.link === 'string') {
+          action.link = action.link.replace(
+            /\$PAY_URL|\{\{\s*(?:PAY_URL|payUrl)\s*\}\}/g,
+            cleanUrl
+          )
+        }
+      })
+    }
   }
 })
 

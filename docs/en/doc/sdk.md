@@ -7,7 +7,7 @@ description: GeePay SDK download.
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-- [SDK.zip](https://pay.sc58.cn/assets/files/SDK_2.0.zip)
+- [SDK.zip]($PAY_URL/assets/files/SDK_2.0.zip)
 - Version: V2.0
 
 </div>

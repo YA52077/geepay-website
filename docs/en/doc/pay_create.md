@@ -6,7 +6,7 @@ description: GeePay API documentation.
 <div class="tip custom-block" style="padding-top: 8px">This API is used by the server backend to initiate a payment request. It returns a payment QR code link, redirect URL or other launch parameters.</div>
 
 ## Endpoint
-<div class="tip custom-block" style="padding-top: 8px">https://pay.sc58.cn/api/pay/create</div>
+<div class="tip custom-block" style="padding-top: 8px">$PAY_URL/api/pay/create</div>
 
 ## Request Method
 <div class="tip custom-block" style="padding-top: 8px">POST</div>

@@ -6,7 +6,7 @@ description: GeePay API documentation.
 <div class="tip custom-block" style="padding-top: 8px">This API can be used for reconciliation or syncing order status.</div>
 
 ## Endpoint
-<div class="tip custom-block" style="padding-top: 8px">https://pay.sc58.cn/api/merchant/orders</div>
+<div class="tip custom-block" style="padding-top: 8px">$PAY_URL/api/merchant/orders</div>
 
 ## Request Method
 <div class="tip custom-block" style="padding-top: 8px">POST</div>

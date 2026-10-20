@@ -38,6 +38,6 @@ In the merchant dashboard, open Profile -> API Information and click Generate Me
 ## Legacy API Documentation
 <div class="tip custom-block" style="padding-top: 8px">
 
-[View V1 legacy API documentation](https://pay.sc58.cn/doc_old.html)
+[View V1 legacy API documentation]($PAY_URL/doc_old.html)
 
 </div>

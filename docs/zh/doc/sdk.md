@@ -7,7 +7,7 @@ description: GeePay,支付宝免签约即时到账,财付通免签约,微信免�
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-- [SDK.zip](https://pay.sc58.cn/assets/files/SDK_2.0.zip)
+- [SDK.zip]($PAY_URL/assets/files/SDK_2.0.zip)
 
 - 版本：V2.0
 </div>

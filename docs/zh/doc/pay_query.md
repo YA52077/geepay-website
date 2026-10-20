@@ -6,7 +6,7 @@ description: GeePay,支付宝免签约即时到账,财付通免签约,微信免�
 ##  请求地址
 <div class="tip custom-block" style="padding-top: 8px">
 
-https://pay.sc58.cn/api/pay/query
+$PAY_URL/api/pay/query
 
 </div>
 

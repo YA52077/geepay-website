@@ -12,7 +12,7 @@ hero:
       link: /zh/doc/index
     - theme: alt
       text: 支付体验
-      link: https://pay.sc58.cn/user/test.php
+      link: $PAY_URL/user/test.php
   image:
     src: /img/sc58.png
     alt: GeePay
