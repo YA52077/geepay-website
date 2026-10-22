@@ -103,7 +103,48 @@ export default defineConfig({
     siteTitle: 'GeePay',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/YA52077/geepay-website' }
-    ]
+    ],
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: {
+                buttonText: '搜索',
+                buttonAriaLabel: '搜索'
+              },
+              modal: {
+                noResultsText: '没有找到结果',
+                resetButtonTitle: '清除查询',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          },
+          en: {
+            translations: {
+              button: {
+                buttonText: 'Search',
+                buttonAriaLabel: 'Search'
+              },
+              modal: {
+                noResultsText: 'No results found',
+                resetButtonTitle: 'Clear query',
+                footer: {
+                  selectText: 'Select',
+                  navigateText: 'Navigate',
+                  closeText: 'Close'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   },
 
   locales: {
@@ -123,30 +164,6 @@ export default defineConfig({
           '/zh/sponsorship/': {
             base: '/zh/sponsorship/',
             items: sidebarSponsorshipZh()
-          }
-        },
-        search: {
-          provider: 'local',
-          options: {
-            locales: {
-              zh: {
-                translations: {
-                  button: {
-                    buttonText: '搜索',
-                    buttonAriaLabel: '搜索'
-                  },
-                  modal: {
-                    noResultsText: '没有找到结果',
-                    resetButtonTitle: '清除查询',
-                    footer: {
-                      selectText: '选择',
-                      navigateText: '切换',
-                      closeText: '关闭'
-                    }
-                  }
-                }
-              }
-            }
           }
         },
         editLink: {
@@ -202,30 +219,6 @@ export default defineConfig({
           '/en/sponsorship/': {
             base: '/en/sponsorship/',
             items: sidebarSponsorshipEn()
-          }
-        },
-        search: {
-          provider: 'local',
-          options: {
-            locales: {
-              en: {
-                translations: {
-                  button: {
-                    buttonText: 'Search',
-                    buttonAriaLabel: 'Search'
-                  },
-                  modal: {
-                    noResultsText: 'No results found',
-                    resetButtonTitle: 'Clear query',
-                    footer: {
-                      selectText: 'Select',
-                      navigateText: 'Navigate',
-                      closeText: 'Close'
-                    }
-                  }
-                }
-              }
-            }
           }
         },
         editLink: {
